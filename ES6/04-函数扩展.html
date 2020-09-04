@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数扩展</title>
+</head>
+<body>
+    <script>
+        /*
+            函数参数默认值
+        */
+
+        // ES5
+        // function fn(x,y) {
+        //     var x = x || 0
+        // }
+
+        // ES6
+        function fn2(x = 0, y = 0) {
+            console.log(x,y)
+        }
+        fn2()                // 0 0
+        fn2(1,2)             // 1 2
+
+
+        // rest 剩余参数:只能写在形参列表的最后面
+
+        // ES5
+        // function arrayPush() {
+        //     var arr = arguments[0]
+        //     for(var i = 1; i < arguments.length; i++ ) {
+        //         arr.push(arguments[i])
+        //     }
+        // }
+        
+        // ES6
+        function arrayPush(arr,...newData) {
+            for(var i = 1; i < newData.length; i++ ) {
+                arr.push(newData[i])
+            }
+        }
+
+        // var arr1 = [1,2,3]
+        // arrayPush(arr1, 'a', 'b', 'c')
+        // console.log(arr1)
+
+        
+    </script>
+</body>
+</html>

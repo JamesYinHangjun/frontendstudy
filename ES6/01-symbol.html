@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <script>
+        /*
+            Symbol:
+                ES6新增的基本数据类型
+
+                值是由Symbol函数调用产生的
+
+            作用：
+                属性私有化--数据保护
+        */
+
+        var s1 = Symbol()
+        console.log(s1)                 // Symbol()
+        console.log(typeof s1)          // "symbol"
+
+
+        // 我们希望实例在出生以后性别就确定下来了，不会再改变，受保护到死
+        // function Person(name,gender) {
+        //     this.name = name
+        //     this.gender = gender
+        // }
+        // var p1 = new Person('James',35)
+        // console.log(p1)
+
+
+        var Person = (function() {
+
+            let _gender = Symbol('gender')
+
+            function P(name,gender) {
+                this.name = name
+                this[_gender] = gender
+            }
+            return P
+        })()
+        var p1 = new Person('James',35)
+        console.log(p1)
+    </script>
+</body>
+</html>

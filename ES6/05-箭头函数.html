@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        /*
+            箭头函数： let fn = () ={}
+        */
+
+        let fn1 = () => {
+            console.log("fn1")
+        }
+
+        // 传参
+        // 当参数有且只有一个时，()可以省略
+        // 如果函数体有且只有一条语句，{}也可以省略，return 也可以省略
+        let fn2 = x => console.log(x)
+        let fn2 = x =>  x
+
+
+
+        /* 
+            箭头函数使用的注意事项:
+                1.内部this指向函数定义时所在作用域的this
+                    普通函数this指向函数执行期绑定的
+                2.不能作为构造函数
+                3.没有arguments
+                3.不能作为生成器函数
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <div id="demoreact">
+
+    </div>
+    
+    <script type="text/babel">
+        // 1.注释： {/*jsx中需要注释的内容*/}
+        // 2.多行标签： 必须使用一个父元素把它们包裹起来
+        let myDom = <h1>
+                        {/*需要注释的内容*/}
+                        你好世界
+                    </h1>
+
+        // let myDom = <div>
+        //                 <h1>
+        //                     {/*需要注释的内容*/}
+        //                     你好世界
+        //                 </h1>
+        //                 <h1>
+        //                     hellos
+        //                 </h1>
+        //             </div>
+        ReactDOM.render(myDom,document.getElementById('demoreact'))
+    </script>
+</body>
+</html>

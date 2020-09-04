@@ -1,0 +1,10 @@
+react 开发环境的搭建
+1.react.js      核心文件
+2.react-dom.js  渲染页面中的dom   当前文件必须依赖于react.js核心文件
+3.babel.js      把浏览器不认识的翻译成浏览器认识的  ES6转换成ES5  JSX语法转换成js
+
+
+下载：
+    react.js        npm i react --save
+    react-dom.js    npm i react-dom --save
+    babel           npm i babel-standalone --save
