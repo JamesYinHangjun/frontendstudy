@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <!-- 创建dom根节点，一个页面中需要有一个根节点 这个节点下的内容就会被react所管理 -->
+    <div id="demoreact">
+
+    </div>
+
+    <script type="text/babel">
+        // 1.使用表达式  {表达式}
+        let txt = "你好"
+        let num = 123
+
+        // 2.函数的使用
+        let user = {
+            name:"小明",
+            age: 18
+        }
+        function person(obj) {
+            // return "姓名是"+obj.name +","+"年龄是"+obj.age
+            return `姓名是${obj.name}----年龄是${obj.age}`
+        }
+
+        // 3.属性设置
+        let linkUrl = "http://www.baidu.com"
+
+        let myDom = <div>
+                        <h1>{txt}</h1>
+                        <h1>{num+1}</h1>
+                        <h1>{person(user)}</h1>
+                        <h1><a href={linkUrl}>点我去百度</a></h1>
+                    </div>
+        ReactDOM.render(myDom,document.getElementById('demoreact'))
+    </script>
+</body>
+</html>
