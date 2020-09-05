@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+</head>
+<body>
+    <!-- 创建dom根节点，一个页面中需要有一个根节点 这个节点下的内容就会被react所管理 -->
+    <div id="demoreact">
+
+    </div>
+
+    <script type="text/babel">
+        // react列表渲染  
+        // 1. map()
+
+        let arr = ["吃饭","睡觉","敲代码"]
+        // let myDom = arr.map((item,index) => {
+        //     // 如果return 后面的内容需要换行，则必须要用()将其包括
+        //     return(
+        //         <p key={index}>{item}</p>
+        //     )
+        // })
+        // ReactDOM.render(myDom,document.getElementById('demoreact'))
+
+        // 2. for in循环
+        function fun() {
+            let newArr = []
+            for(let index in arr) {
+                newArr.push(<p key={index}>{arr[index]}</p>)
+            }
+            return newArr
+        }
+
+        ReactDOM.render(fun(),document.getElementById('demoreact'))
+    </script>
+</body>
+</html>
